@@ -103,7 +103,7 @@ import uk.ac.manchester.cs.owlapi.modularity.SyntacticLocalityModuleExtractor;
  *
  * @author RadW
  */
-public class DbPedia {
+public class Examples {
     
     public final String PIZZA_IRI = "http://protege.stanford.edu/ontologies/pizza/pizza.owl";
     public final String PEOPLE_IRI = "http://owl.man.ac.uk/2006/07/sssw/people.owl";
@@ -112,8 +112,8 @@ public class DbPedia {
     
     /** The examples here show how to load ontologies
      * 
-     * @throws OWLOntologyCreationException */
-    
+     * @throws OWLOntologyCreationException 
+     */    
     public void shouldLoad() throws OWLOntologyCreationException {
         // Get hold of an ontology manager
         OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
@@ -144,8 +144,8 @@ public class DbPedia {
         // http://purl.obolibrary.org/obo/bfo.owl to our local copy above.
         manager.addIRIMapper(new SimpleIRIMapper(iri, IRI.create(file)));
         // Load the ontology as if we were loading it from the Web (from its ontology IRI)
-        IRI pizzaOntologyIRI = IRI.create("http://purl.obolibrary.org/obo/bfo.owl");
-        OWLOntology redirectedBfo = manager.loadOntology(pizzaOntologyIRI);
+        IRI bfoOntologyIRI = IRI.create("http://purl.obolibrary.org/obo/bfo.owl");
+        OWLOntology redirectedBfo = manager.loadOntology(bfoOntologyIRI);
         System.out.println("Loaded ontology: " + redirectedBfo);
         System.out.println(" from: " + manager.getOntologyDocumentIRI(redirectedBfo));
     }
@@ -177,7 +177,7 @@ public class DbPedia {
         // in owl/xml format
         OWLXMLOntologyFormat owlxmlFormat = new OWLXMLOntologyFormat();
         // Some ontology formats support prefix names and prefix IRIs. In our
-        // case we loaded the pizza ontology from an rdf/xml format, which
+        // case we loaded the bfo ontology from an rdf/xml format, which
         // supports prefixes. When we save the ontology in the new format we
         // will copy the prefixes over so that we have nicely abbreviated IRIs
         // in the new ontology document
@@ -224,7 +224,6 @@ public class DbPedia {
         OWLClass clsAMethodA = factory.getOWLClass(iri);
         System.out.println("clsAMethodA.getIRI().getNamespace(): " + clsAMethodA.getIRI().getNamespace());
         System.out.println("clsAMethodA.getIRI().getShortForm(): " + clsAMethodA.getIRI().getShortForm());
-        
         // The second is to use a prefix manager and specify abbreviated IRIs.
         // This is useful for creating lots of entities with the same prefix
         // IRIs. First create our prefix manager and specify that the default
@@ -236,7 +235,6 @@ public class DbPedia {
         OWLClass clsAMethodB = factory.getOWLClass("OBI_0000811", pm);
         System.out.println("clsAMethodB.getIRI().getNamespace(): " + clsAMethodB.getIRI().getNamespace());
         System.out.println("clsAMethodB.getIRI().getShortForm(): " + clsAMethodB.getIRI().getShortForm());
-        
         // Note that clsAMethodA will be equal to clsAMethodB because they are
         // both OWLClass objects and have the same IRI. Creating entities in the
         // above manner does not "add them to an ontology". They are merely
@@ -918,7 +916,7 @@ public class DbPedia {
         });
     }
     
-        /** An example which shows how to interact with a reasoner. In this example
+    /** An example which shows how to interact with a reasoner. In this example
      * Pellet is used as the reasoner. You must get hold of the pellet libraries
      * from pellet.owldl.com.
      * 

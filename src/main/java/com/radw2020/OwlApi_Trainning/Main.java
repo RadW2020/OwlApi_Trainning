@@ -18,69 +18,62 @@ public class Main {
     public static void main(String[] args) throws OWLOntologyCreationException {
         
         try {
-            //try {
-            BasicConfigurator.configure();
             
-            DbPedia totem = new DbPedia();
+            //BasicConfigurator.configure(); //Uncommnent for debugging purposes
+            
+            Examples totem = new Examples();
             
             System.out.println("\nshouldLoad");
-            //totem.shouldLoad();
+            totem.shouldLoad();
             System.out.println("\nshouldSaveOntologies()");
-            //totem.shouldSaveOntologies();
+            totem.shouldSaveOntologies();
             System.out.println("\nshouldAccessEntities()");
-            //totem.shouldAccessEntities();
+            totem.shouldAccessEntities();
             System.out.println("\nshouldBuildDataRanges()");
-            //totem.shouldBuildDataRanges();
+            totem.shouldBuildDataRanges();
             System.out.println("\nshouldUseDataranges()");
-            //totem.shouldUseDataranges();
+            totem.shouldUseDataranges();
             System.out.println("\nshouldInstantiateLiterals()");
-            //totem.shouldInstantiateLiterals();
+            totem.shouldInstantiateLiterals();
             System.out.println("\nshouldLoadAndSave()");
-            //totem.shouldLoadAndSave();
+            totem.shouldLoadAndSave();
             System.out.println("\nshouldAddAxiom()");
-            //totem.shouldAddAxiom();
+            totem.shouldAddAxiom();
             System.out.println("\nshouldCreateOntology()");
-            //totem.shouldCreateOntology();
+            totem.shouldCreateOntology();
             System.out.println("\nshouldCreatePropertyAssertions()");
-            //totem.shouldCreatePropertyAssertions();
+            totem.shouldCreatePropertyAssertions();
             System.out.println("\nshouldAddClassAssertion()");
-            //totem.shouldAddClassAssertion();
+            totem.shouldAddClassAssertion();
             System.out.println("\nshouldCreateAndSaveOntology()");
-            //totem.shouldCreateAndSaveOntology();
+            totem.shouldCreateAndSaveOntology();
             System.out.println("\nshouldAddObjectPropertyAssertions()");
-            //totem.shouldAddObjectPropertyAssertions();
+            totem.shouldAddObjectPropertyAssertions();
             System.out.println("\nshouldDeleteIndividuals()");
-            //totem.shouldDeleteIndividuals();
+            totem.shouldDeleteIndividuals();
             System.out.println("\nshouldCreateRestrictions()");
-            //totem.shouldCreateRestrictions();
+            totem.shouldCreateRestrictions();
             System.out.println("\nshouldUseReasoner()");
-            //totem.shouldUseReasoner();
+            totem.shouldUseReasoner();
             System.out.println("\nshouldLookAtRestrictions()");
-            //totem.shouldLookAtRestrictions();
+            totem.shouldLookAtRestrictions();
             System.out.println("\nshouldCreateAndReadAnnotations()");
-            //totem.shouldCreateAndReadAnnotations();
+            totem.shouldCreateAndReadAnnotations();
             System.out.println("\nshouldCreateInferredAxioms()");
-            //totem.shouldCreateInferredAxioms();
+            totem.shouldCreateInferredAxioms();
             System.out.println("\nshouldMergeOntologies()");
-            //totem.shouldMergeOntologies();
+            totem.shouldMergeOntologies();
             System.out.println("\nshouldWalkOntology()");
-            //totem.shouldWalkOntology();
+            totem.shouldWalkOntology();
             System.out.println("\nshouldQueryWithReasoner()");
-            //totem.shouldQueryWithReasoner();
+            totem.shouldQueryWithReasoner();
             System.out.println("\nshouldUseIRIMappers()");
-            //totem.shouldUseIRIMappers();
+            totem.shouldUseIRIMappers();
             System.out.println("\nshouldExtractModules()");
-            //totem.shouldExtractModules();
+            totem.shouldExtractModules();
             System.out.println("\nowlPrimer()");
             totem.owlPrimer();
             
-            
-            //} catch (OWLOntologyStorageException | IOException ex) {
-            //   Logger.getLogger(DbPedia.class.getName()).log(Level.SEVERE, null, ex);
-            //}
-        //shouldCreateInferredAxioms()    
-        /*} catch (OWLOntologyStorageException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);*/
         } catch (Exception ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
